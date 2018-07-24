@@ -1,9 +1,9 @@
 const deckgl = new deck.DeckGL({
   mapboxApiAccessToken: '',
   mapStyle: 'https://free.tilehosting.com/styles/darkmatter/style.json?key=U0iNgiZKlYdwvgs9UPm1',
-  longitude: -1.4157,
-  latitude: 52.2324,
-  zoom: 6,
+  longitude: -74.0060,
+  latitude: 40.7128,
+  zoom: 9,
   minZoom: 5,
   maxZoom: 15,
   pitch: 40.5
@@ -47,7 +47,7 @@ function renderLayer () {
     id: 'heatmap',
     colorRange: COLOR_RANGE,
     data,
-    elevationRange: [0, 1000],
+    elevationRange: [0, 50],
     elevationScale: 250,
     extruded: true,
     getPosition: d => d,
@@ -61,8 +61,25 @@ function renderLayer () {
   });
 }
 
-d3.csv('https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv',
+d3.csv('https://raw.githubusercontent.com/youdymoo/ridesharing/master/data/center/tripData-center-complete.csv',
    (error, response) => {
   data = response.map(d => [Number(d.lng), Number(d.lat)]);
   renderLayer();
 });
+
+var updateVar = setInterval(updateData, 5000);
+var dataSource = 'https://raw.githubusercontent.com/youdymoo/ridesharing/master/data/center/tripData-center-complete.csv'
+
+function updateData() {
+  if (dataSource == 'https://raw.githubusercontent.com/youdymoo/ridesharing/master/data/center/tripData-center-complete.csv') {
+    dataSource = 'https://raw.githubusercontent.com/youdymoo/ridesharing/master/data/sandbox/NYCdata-center-complete.csv';
+  } else {
+    dataSource = 'https://raw.githubusercontent.com/youdymoo/ridesharing/master/data/center/tripData-center-complete.csv';
+  }
+
+    d3.csv(dataSource,
+   (error, response) => {
+  data = response.map(d => [Number(d.lng), Number(d.lat)]);
+  renderLayer();
+});
+}
