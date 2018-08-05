@@ -77,8 +77,7 @@ function updateData() {
     dataSource = 'https://raw.githubusercontent.com/youdymoo/ridesharing/master/data/center/tripData-center-complete.csv';
   }
 
-    d3.csv(dataSource,
-   (error, response) => {
+  d3.csv(dataSource, (error, response) => {
   data = response.map(d => [Number(d.lng), Number(d.lat)]);
   renderLayer();
 });
