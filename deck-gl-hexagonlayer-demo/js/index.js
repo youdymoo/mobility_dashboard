@@ -1,5 +1,5 @@
 const deckgl = new deck.DeckGL({
-  mapboxApiAccessToken: '',
+  mapboxApiAccessToken: 'pk.eyJ1IjoidG1jdyIsImEiOiJjamN0Z3ZiOXEwanZkMnh2dGFuemkzemE3In0.gibebYiJ5TEdXvwjpCY0jg',
   mapStyle: 'https://free.tilehosting.com/styles/darkmatter/style.json?key=U0iNgiZKlYdwvgs9UPm1',
   longitude: -1.4157,
   latitude: 52.2324,
