@@ -86,27 +86,9 @@
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
           <h1>Routing</h1>
           <h2>Map</h2>
-          <div id="map"></div>
-          <script>
-            L.mapbox.accessToken = '{{ACCESS_KEY}}';
-
-            var map = L.mapbox.map('map', 'mapbox.streets', {
-            scrollWheelZoom: false,
-            zoomControl: false
-          }).setView([42.2808,-83.7430], 13);
-          // mapboxgl.accessToken = '{{ ACCESS_KEY }}';
-          // var map = new mapboxgl.Map({
-          //       container: 'map',
-          //       style: 'mapbox://styles/mapbox/streets-v9',
-          //       center: [42.2808,-83.7430],
-          //       zoom: 13
-          //   });
-
-            L.mapbox.featureLayer({{ route_data|safe }}).addTo(map);
-            L.mapbox.featureLayer({{stop_locations|safe}}).addTo(map);
-          </script>
+          <iframe width="100%" height="360px" frameborder="0" src="">&nbsp;</iframe>
           <br/>
-          <h2>Statistics</h2>
+          <!-- <h2>Statistics</h2>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -128,7 +110,7 @@
                 {% endfor %}
               </tbody>
             </table>
-          </div>
+          </div> -->
         </main>
       </div>
     </div>

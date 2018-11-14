@@ -1,0 +1,8 @@
+
+*.pyc
+mobility_dashboard/mobility_dashboard/static/css/.DS_Store
+mobility_dashboard/mobility_dashboard/static/.DS_Store
+*.pyc
+mobility_dashboard/.DS_Store
+mobility_dashboard/mobility_dashboard/.DS_Store
+.DS_Store
